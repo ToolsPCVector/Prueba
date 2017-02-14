@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Administración de Clientes</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:outputPanel>Administración de Clientes</p:outputPanel>
+            <br/>
+            <p:outputPanel>Lista de Clilentes</p:outputPanel>
+            <p:dataTable value="#{ClientesBean.clientes}" var="item"
+                         paginator="true" rows="5">
+                <p:column>
+                    <f:facet name="header"> <h:outputText value="ID" /> </f:facet>
+                    <h:outputText value="#{item.id}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header"> <h:outputText value="Código de descuento" /> </f:facet>
+                    <h:outputText value="#{item.codDesc}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header"> <h:outputText value="Zip" /> </f:facet>
+                    <h:outputText value="#{item.zip}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header"> <h:outputText value="Nombre" /> </f:facet>
+                    <h:outputText value="#{item.nombre}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header"> <h:outputText value="Dirección" /> </f:facet>
+                    <h:outputText value="#{item.direccion}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header"> <h:outputText value="Ciudad" /> </f:facet>
+                    <h:outputText value="#{item.ciudad}"/>
+                </p:column>                    
+            </p:dataTable>
+        </h:form>
+    </h:body>
+</html>
+
