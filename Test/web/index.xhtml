@@ -11,7 +11,9 @@
             <p:panel>
                 <p:outputPanel>Prueba JSF --> Aplicación Almacén</p:outputPanel>
                 <br/><br/>                
-                <h:commandLink action="AdminClientes" >Administración de Clientes</h:commandLink>
+                <h:commandLink action="AdminClientes" actionListener="#{MBClientes.listar()}" >Administración de Clientes</h:commandLink>
+                 <br/><br/> 
+                <h:commandLink action="crear" >Crear cliente</h:commandLink>
             </p:panel>
         </h:form>
     </h:body>

@@ -10,10 +10,14 @@
     <h:body>
         <h:form>
             <p:outputPanel>Administración de Clientes</p:outputPanel>
-            <br/>
-            <p:outputPanel>Lista de Clilentes</p:outputPanel>
-            <p:dataTable value="#{ClientesBean.clientes}" var="item"
+            <br/><br/>
+
+            <br/> <br/>
+            <p:outputPanel autoUpdate="true">Lista de Clilentes</p:outputPanel>
+
+            <p:dataTable value="#{MBClientes.clientes}" selection="#{MBClientes.selectcliente}" rowKey="#{item.id}" var="item" 
                          paginator="true" rows="5">
+                <p:column selectionMode="single"></p:column>
                 <p:column>
                     <f:facet name="header"> <h:outputText value="ID" /> </f:facet>
                     <h:outputText value="#{item.id}"/>
@@ -37,8 +41,27 @@
                 <p:column>
                     <f:facet name="header"> <h:outputText value="Ciudad" /> </f:facet>
                     <h:outputText value="#{item.ciudad}"/>
-                </p:column>                    
+                </p:column>    
+                <p:column>
+                    <f:facet name="header"> <h:outputText value="telefono" /> </f:facet>
+                    <h:outputText value="#{item.telefono}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header"> <h:outputText value="Fax" /> </f:facet>
+                    <h:outputText value="#{item.fax}"/>
+                </p:column>            
+                <p:column>
+                    <f:facet name="E/mail"> <h:outputText value="Email" /> </f:facet>
+                    <h:outputText value="#{item.email}"/>
+                </p:column>
             </p:dataTable>
+
+            <br/>
+            <br/>               
+            <h:commandLink action="crear" >Crear nuevo cliente</h:commandLink>
+            <br/>
+            <h:commandLink action="modificar" >Modificar</h:commandLink>
+            <br/>
         </h:form>
     </h:body>
 </html>
